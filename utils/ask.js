@@ -1,3 +1,4 @@
+import fs from 'fs';
 import enquirerPkg from 'enquirer';
 const { Input } = enquirerPkg; // because it's a CommonJS package
 import { to } from 'await-to-js';
@@ -13,6 +14,13 @@ const ask = async ({ name, message, hint, initial }) => {
 			initial,
 			validate(value, state) {
 				if (state && state.name === `command`) return true;
+				if (state && state.name === `name`) {
+					if (fs.existsSync(value)) {
+						return `Directory already exists: ./${value}`;
+					} else {
+						return true;
+					}
+				}
 				return !value ? `Please add a value.` : true;
 			}
 		})
