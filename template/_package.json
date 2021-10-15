@@ -11,5 +11,8 @@
     "name": "{{authorName}}",
     "email": "{{authorEmail}}",
     "url": "{{authorUrl}}"
+  },
+  "scripts": {
+    "format": "prettier --write \"./**/*.{js,json}\""
   }
 }
