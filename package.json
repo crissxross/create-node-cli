@@ -17,6 +17,10 @@
     "cli-welcome": "^2.2.2",
     "copy-template-dir": "^1.4.0",
     "enquirer": "^2.3.6",
+    "execa": "^5.1.1",
     "meow": "^10.1.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
   }
 }

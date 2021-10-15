@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
+import execa from 'execa';
 import cliAlerts from 'cli-alerts';
 import copyTemplateDir from 'copy-template-dir';
 import chalk from 'chalk';
@@ -18,23 +19,26 @@ const generate = async () => {
   const inDirPath = path.join(__dirname, '../template');
   const outDirPath = path.join(process.cwd(), outDir);
 
-  copyTemplateDir(inDirPath, outDirPath, vars, (err, createdFiles) => {
+  copyTemplateDir(inDirPath, outDirPath, vars, async (err, createdFiles) => {
     if (err) throw err;
 
     console.log(dim(`\nCreating files in ${green(`./${outDir}`)} directory:\n`));
 
-    createdFiles.forEach(filePath => {
+    createdFiles.forEach((filePath) => {
       const fileName = path.basename(filePath);
-      console.log(`${green.dim(`CREATED`)} ${fileName}`)
+      console.log(`${green.dim(`CREATED`)} ${fileName}`);
     });
+
+    process.chdir(outDirPath);
+    // FIXME this dedupe is not working - why?
+    await execa(`npm`, [`dedupe`]);
 
     cliAlerts({
       type: `success`,
       name: `ALL DONE`,
-      msg: `\n${createdFiles.length} files created in ${dim(`./${outDir}`)} directory`
+      msg: `\n${createdFiles.length} files created in ${dim(`./${outDir}`)} directory`,
     });
-
   });
-}
+};
 
-export { generate }
+export { generate };
