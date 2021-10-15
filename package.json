@@ -1,12 +1,29 @@
 {
   "name": "@crissxross/create-node-cli",
   "version": "0.0.1",
-  "description": "CLI to create Node.js CLIs",
+  "description": "CLI to create Node.js CLIs (ESM version), based on create-node-cli by Ahmad Awais",
   "type": "module",
   "bin": {
     "create-node-cli": "index.js",
     "ncli": "index.js"
   },
+  "repository": "crissxross/create-node-cli",
+  "author": {
+    "name": "Christine Wilks",
+    "email": "crissxross@me.com",
+    "url": "https://crissxross.net"
+  },
+  "files": [
+    "index.js",
+    "utils",
+    "template"
+  ],
+  "keywords": [
+    "node cli",
+    "nodejs",
+    "crissxross",
+    "Christine Wilks"
+  ],
   "dependencies": {
     "await-to-js": "^3.0.0",
     "cli-alerts": "^1.2.2",

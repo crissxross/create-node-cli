@@ -12,6 +12,14 @@
     "email": "{{authorEmail}}",
     "url": "{{authorUrl}}"
   },
+  "keywords": [
+    "{{name}}",
+    "{{authorName}}"
+  ],
+  "files": [
+    "index.js",
+    "utils"
+  ],
   "scripts": {
     "format": "prettier --write \"./**/*.{js,json}\""
   }
