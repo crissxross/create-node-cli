@@ -2,7 +2,7 @@ import ora from 'ora';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import execa from 'execa';
-import cliAlerts from 'cli-alerts';
+import alert from 'cli-alerts';
 import copyTemplateDir from 'copy-template-dir';
 import chalk from 'chalk';
 import { questions } from './questions.js';
@@ -32,11 +32,12 @@ const generate = async () => {
 			const fileName = path.basename(filePath);
 			console.log(`${green.dim(`CREATED`)} ${fileName}`);
 		});
+		console.log(); // for empty line
 
 		spinner.start(
-			`${chalk.yellow(`DEPENDENCIES`)} installing...\n${dim(
+			`${chalk.yellow(`DEPENDENCIES`)} installing...\n\n${dim(
 				`It may take a moment...`
-			)}`
+			)}\n`
 		);
 		process.chdir(outDirPath);
 		const pkgs = [
@@ -54,7 +55,7 @@ const generate = async () => {
 		await execa(`npm`, [`dedupe`]);
 		spinner.succeed(`${green(`DEPENDENCIES`)} installed (& DEDUPE ran)`);
 
-		cliAlerts({
+		alert({
 			type: `success`,
 			name: `ALL DONE`,
 			msg: `\n${createdFiles.length} files created in ${dim(

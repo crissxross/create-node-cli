@@ -4,8 +4,8 @@ import path from 'path';
 import enquirerPkg from 'enquirer';
 const { Input } = enquirerPkg; // because it's a CommonJS package
 import { to } from 'await-to-js';
-import cliHandleError from 'cli-handle-error';
-import cliShouldCancel from 'cli-should-cancel';
+import handleError from 'cli-handle-error';
+import shouldCancel from 'cli-should-cancel';
 import storePkg from 'data-store';
 const { Store } = storePkg;
 
@@ -47,10 +47,10 @@ const ask = async ({ name, message, hint, initial }) => {
 				return !value ? `Please add a value.` : true;
 			}
 		})
-			.on(`cancel`, () => cliShouldCancel())
+			.on(`cancel`, () => shouldCancel())
 			.run()
 	);
-	cliHandleError(`INPUT`, err);
+	handleError(`INPUT`, err);
 
 	return response;
 };
