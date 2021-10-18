@@ -1,0 +1,45 @@
+{
+  "name": "cli-todo",
+  "description": "CLI to manage todos anywhere",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "cli-todo": "index.js",
+    "todo": "index.js"
+  },
+  "author": {
+    "name": "Christine Wilks",
+    "email": "crissxross@me.com",
+    "url": "https://crissxross.net"
+  },
+  "keywords": [
+    "cli-todo",
+    "Christine Wilks"
+  ],
+  "files": [
+    "index.js",
+    "utils"
+  ],
+  "scripts": {
+    "format": "prettier --write \"./**/*.{js,json}\""
+  },
+  "dependencies": {
+    "await-to-js": "^3.0.0",
+    "chalk": "^4.1.2",
+    "cli-alerts": "^1.2.2",
+    "cli-handle-error": "^4.4.0",
+    "cli-handle-unhandled": "^1.1.1",
+    "cli-meow-help": "^2.0.2",
+    "cli-should-cancel": "^1.0.3",
+    "cli-welcome": "^2.2.2",
+    "enquirer": "^2.3.6",
+    "lodash-es": "^4.17.21",
+    "lowdb": "^3.0.0",
+    "make-dir": "^3.1.0",
+    "meow": "^10.1.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  }
+}
