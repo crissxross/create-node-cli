@@ -1,0 +1,39 @@
+{
+  "name": "cli-pre-configurable",
+  "description": "CLI that can be pre-configure with an rc or config file",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "cli-pre-configurable": "index.js"
+  },
+  "author": {
+    "name": "Christine Wilks",
+    "email": "crissxross@me.com",
+    "url": "https://crissxross.net"
+  },
+  "keywords": [
+    "cli-pre-configurable",
+    "Christine Wilks"
+  ],
+  "files": [
+    "index.js",
+    "utils"
+  ],
+  "scripts": {
+    "format": "prettier --write \"./**/*.{js,json}\""
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cli-alerts": "^1.2.2",
+    "cli-handle-error": "^4.4.0",
+    "cli-handle-unhandled": "^1.1.1",
+    "cli-meow-help": "^2.0.2",
+    "cli-welcome": "^2.2.2",
+    "cosmiconfig": "^7.0.1",
+    "meow": "^10.1.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  }
+}
