@@ -1,0 +1,43 @@
+{
+  "name": "cli-unit-testing",
+  "description": "CLI unit testing",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "cli-unit-testing": "index.js",
+    "slugify": "index.js"
+  },
+  "author": {
+    "name": "Christine Wilks",
+    "email": "crissxross@me.com",
+    "url": "https://crissxross.net"
+  },
+  "keywords": [
+    "cli-unit-testing",
+    "Christine Wilks"
+  ],
+  "files": [
+    "index.js",
+    "utils"
+  ],
+  "scripts": {
+    "format": "prettier --write \"./**/*.{js,json}\"",
+    "test": "ava"
+  },
+  "dependencies": {
+    "@sindresorhus/slugify": "^2.1.0",
+    "chalk": "^4.1.2",
+    "cli-alerts": "^1.2.2",
+    "cli-handle-error": "^4.4.0",
+    "cli-handle-unhandled": "^1.1.1",
+    "cli-meow-help": "^2.0.2",
+    "cli-welcome": "^2.2.2",
+    "execa": "^5.1.1",
+    "meow": "^10.1.1"
+  },
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "prettier": "^2.4.1"
+  }
+}
