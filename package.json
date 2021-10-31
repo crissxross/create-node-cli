@@ -1,6 +1,6 @@
 {
   "name": "@crissxross/create-node-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "CLI to create Node.js CLIs (ESM version), based on create-node-cli by Ahmad Awais",
   "type": "module",
   "bin": {
